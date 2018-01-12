@@ -1,0 +1,15 @@
+.bloggerCard{
+  width: 40%;
+  border: 2px solid #00aced;
+  margin: 2em auto;
+  padding: 1em;
+  border-radius: 25px;
+  box-shadow: -5px 5px #eee;
+  background-color:white;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.bloggerUsername{
+  font-family: sans-serif Arial;
+  color:#3366BB;
+}

@@ -50,29 +50,21 @@ class App extends Component {
       color: "#add8e6",
       textOutline: "2px 2px black"
     };
+    const renderPosts = this.state.bloggers.map((post, index) => {
+      return(
+          <Useroutput
+          userName={post.userName}
+          blogPost={post.blogPost}
+          clicked={this.revealMysteriousBlogger.bind(this, "@you")}
+          key={index}/>
+        );
+    });
     return (
       <div className="App">
         <h1 style={style}>Blogg'r</h1>
-        <div className="bloggerCard">
-          <Useroutput
-            userName={this.state.bloggers[0].userName}
-            blogPost={this.state.bloggers[0].blogPost}
-            clicked={this.revealMysteriousBlogger.bind(this, "@you")}
-            />
-            <Userinput
-            changed={this.updateYourBlog}/>
-        </div>
-        <div className="bloggerCard">
-          <Useroutput
-            userName={this.state.bloggers[1].userName}
-            blogPost={this.state.bloggers[1].blogPost}/>
-        </div>
-        <div className="bloggerCard">
-          <Useroutput
-            userName={this.state.bloggers[2].userName}
-            blogPost={this.state.bloggers[2].blogPost}/>
-        </div>
-        </div>
+        <Userinput changed={this.updateYourBlog}/>
+        {renderPosts}
+      </div>
     );
   }
 }
